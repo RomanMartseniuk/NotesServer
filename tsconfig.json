@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    /* Основне */
+    "target": "ES2020", // сучасний синтаксис
+    "module": "CommonJS", // для Node.js
+    "lib": ["ES2020"], // стандартні бібліотеки JS
+    "moduleResolution": "Node", // щоб працювали імпорти node-пакетів
+    "esModuleInterop": true, // дозволяє імпортувати express як import express from "express"
+    "allowSyntheticDefaultImports": true, // ще одна сумісність з npm-пакетами
+    "resolveJsonModule": true, // дозволяє імпортувати JSON
+    "skipLibCheck": true, // щоб не скаржився на типи в бібліотеках (express і т.д.)
+    "forceConsistentCasingInFileNames": true,
+
+    /* Структура проєкту */
+    "rootDir": "src", // де твій код
+    "outDir": "dist", // куди компілювати
+
+    /* Якість коду */
+    "strict": true, // строгий режим (рекомендую)
+    "noImplicitAny": true, // забороняє "any" без явного визначення
+    "strictNullChecks": true // перевірка на null/undefined
+  },
+  "include": ["src"], // які папки компілювати
+  "exclude": ["node_modules", "dist"] // що ігнорити
+}
