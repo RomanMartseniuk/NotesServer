@@ -36,10 +36,10 @@ npm run dev
 
 Дані зберігаються у файлі notes.json у корені проєкту
 
-##Ендпоінти
+## Ендпоінти
 
-- Отримати всі нотатки
-**GET /**
+- Отримати всі нотатки\
+**GET /**\
 Відповідь:
 ```
 [
@@ -47,15 +47,15 @@ npm run dev
 ]
 ```
 
-- Отримати нотатку за ID
-**GET /:id**
+- Отримати нотатку за ID\
+**GET /:id**\
 Відповідь:
 ```
 { "id": 123, "title": "Title", "content": "Content" }
 ```
 
-- Додати нову нотатку
-**POST /**
+- Додати нову нотатку\
+**POST /**\
 Тіло запиту (JSON):
 ```
 { "title": "New Note", "content": "Note content" }
@@ -65,8 +65,8 @@ npm run dev
 { "id": 123456789, "title": "New Note", "content": "Note content" }
 ```
 
-- Оновити нотатку
-**PUT /:id**
+- Оновити нотатку\
+**PUT /:id**\
 Тіло запиту (JSON):
 ```
 { "title": "Updated Title", "content": "Updated content" }
@@ -76,8 +76,8 @@ npm run dev
 { "id": 123, "title": "Updated Title", "content": "Updated content" }
 ```
 
-- Видалити нотатку
-**DELETE /:id**
+- Видалити нотатку\
+**DELETE /:id**\
 Відповідь: статус 204 No Content
 
 ## Примітки
