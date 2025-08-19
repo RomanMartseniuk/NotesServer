@@ -18,7 +18,6 @@ type Note = {
   content: string;
 }
 
-// Check for the existence of the notes database file
 if (!fs.existsSync(NOTES_DB)) {
   fs.writeFileSync(NOTES_DB, ""); 
   console.log("Файл створено:", NOTES_DB);
@@ -37,6 +36,16 @@ function readNotesFromFile(): Note[] {
 app.get("/", (req: Request, res: Response) => {
   const notes: Note[] = readNotesFromFile();
   res.json(notes);
+});
+
+app.get("/:id", (req: Request, res: Response) => {
+  const notes: Note[] = readNotesFromFile();
+  const id = parseInt(req.params.id);
+  const note = notes.find(note => note.id === id);
+  if (!note) {
+    return res.status(404).send("Note not found");
+  }
+  res.json(note);
 });
 
 app.post("/", upload.none(), (req: Request, res: Response) => {
