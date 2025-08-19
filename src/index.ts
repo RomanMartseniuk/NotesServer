@@ -40,8 +40,8 @@ app.get("/", (req: Request, res: Response) => {
 
 app.get("/:id", (req: Request, res: Response) => {
   const notes: Note[] = readNotesFromFile();
-  const id = parseInt(req.params.id);
-  const note = notes.find(note => note.id === id);
+  const id = BigInt(req.params.id); 
+  const note = notes.find((note) => BigInt(note.id) === id);
   if (!note) {
     return res.status(404).send("Note not found");
   }
