@@ -48,7 +48,7 @@ app.get("/:id", (req: Request, res: Response) => {
   res.json(note);
 });
 
-app.post("/", upload.none(), (req: Request, res: Response) => {
+app.post("/", (req: Request, res: Response) => {
   const notes: Note[] = readNotesFromFile();
   const newNote: Note = {
     id: Date.now(),
@@ -71,7 +71,7 @@ app.delete("/:id", (req: Request, res: Response) => {
   res.status(204).send();
 });
 
-app.put("/:id", upload.none(), (req: Request, res: Response) => {
+app.put("/:id", (req: Request, res: Response) => {
   const notes: Note[] = readNotesFromFile();
   const noteId = parseInt(req.params.id, 10);
   const noteIndex = notes.findIndex((note) => note.id === noteId);
